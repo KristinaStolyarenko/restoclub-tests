@@ -7,3 +7,4 @@ gradlew
 gradlew.bat
 .allure
 credentials.properties
+settings.gradle
