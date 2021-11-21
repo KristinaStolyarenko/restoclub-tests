@@ -1,5 +1,6 @@
 package ru.restoclub;
 
+import com.codeborne.selenide.Configuration;
 import config.CredentialsConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,7 @@ public class LoginTests extends TestData {
 
     @Test
     void PositiveRegistration (){
+        System.out.println(Configuration.remote);
         step("Открываем главную страницу", () -> {
             mainPage.openPage();
         });
@@ -51,6 +53,7 @@ public class LoginTests extends TestData {
 
     @Test
     void PositiveAuthorization (){
+        System.out.println(Configuration.remote);
         step("Открываем главную страницу", () -> {
             mainPage.openPage();
         });
@@ -70,6 +73,7 @@ public class LoginTests extends TestData {
 
     @Test
     void AuthorizationWithWrongPassword (){
+        System.out.println(Configuration.remote);
         step("Открываем главную страницу", () -> {
             mainPage.openPage();
         });
@@ -92,6 +96,7 @@ public class LoginTests extends TestData {
 
     @Test
     void AuthorizationWithWrongEmail (){
+        System.out.println(Configuration.remote);
         step("Открываем главную страницу", () -> {
             mainPage.openPage();
         });
