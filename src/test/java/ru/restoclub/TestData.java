@@ -3,7 +3,7 @@ package ru.restoclub;
 import com.github.javafaker.Faker;
 
 
-public class TestData {
+public class TestData extends TestBase {
 
     static Faker faker = new Faker();
 

@@ -1,6 +1,7 @@
 package ru.restoclub;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import config.CredentialsConfig;
 import helpers.Attach;
 import org.aeonbits.owner.ConfigFactory;
@@ -29,5 +30,6 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+        Selenide.clearBrowserCookies();
     }
 }
