@@ -20,7 +20,7 @@ public class TestBase {
         Configuration.startMaximized = true;
 
         CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
-        Configuration.remote = format(System.getProperty("testCloudUrl", "url"), credentials.testCloudLogin(), credentials.testCloudPassword());
+        Configuration.remote = format("https://%s:%s@selenoid.autotests.cloud/wd/hub/", credentials.testCloudLogin(), credentials.testCloudPassword());
     }
 
     @AfterEach
