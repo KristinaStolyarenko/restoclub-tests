@@ -16,7 +16,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 public class TestBase {
     @BeforeAll
     static void setUp() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DriverSettings.configure();
     }
 
@@ -28,11 +27,11 @@ public class TestBase {
         AllureAttachments.addPageSource();
         AllureAttachments.addBrowserConsoleLogs();
 
-        Selenide.clearBrowserCookies();
-        Selenide.closeWebDriver();
-
         if (Project.isVideoOn()) {
             AllureAttachments.addVideo(sessionId);
         }
+
+        Selenide.clearBrowserCookies();
+        Selenide.closeWebDriver();
     }
 }
