@@ -1,35 +1,37 @@
 package ru.restoclub;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import config.CredentialsConfig;
-import helpers.Attach;
-import org.aeonbits.owner.ConfigFactory;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import config.Project;
+import helpers.AllureAttachments;
+import helpers.DriverSettings;
+import helpers.DriverUtils;
+import io.qameta.allure.junit5.AllureJunit5;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import static java.lang.String.format;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+@ExtendWith({AllureJunit5.class})
 public class TestBase {
     @BeforeAll
-    static void setup() {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-
-        Configuration.browserCapabilities = capabilities;
-        Configuration.startMaximized = true;
-
-        CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
-        Configuration.remote = format("https://%s:%s@selenoid.autotests.cloud/wd/hub/", credentials.testCloudLogin(), credentials.testCloudPassword());
+    static void setUp() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        DriverSettings.configure();
     }
 
     @AfterEach
-    public void tearDown() {
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
-        Attach.addVideo();
-        Selenide.clearBrowserCookies();
+    public void addAttachments() {
+        String sessionId = DriverUtils.getSessionId();
+
+        AllureAttachments.addScreenshotAs("Last screenshot");
+        AllureAttachments.addPageSource();
+        AllureAttachments.addBrowserConsoleLogs();
+
+        Selenide.closeWebDriver();
+
+        if (Project.isVideoOn()) {
+            AllureAttachments.addVideo(sessionId);
+        }
     }
 }

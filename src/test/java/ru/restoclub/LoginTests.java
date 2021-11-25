@@ -1,6 +1,6 @@
 package ru.restoclub;
 
-import config.CredentialsConfig;
+import config.AppConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
 import ru.restoclub.pages.AuthorizationPage;
@@ -13,7 +13,7 @@ public class LoginTests extends TestData {
     MainPage mainPage = new MainPage();
     AuthorizationPage authorizationPage = new AuthorizationPage();
     RegistrationPage registrationPage = new RegistrationPage();
-    CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
+    AppConfig credentials = ConfigFactory.create(AppConfig.class);
 
     @Test
     void PositiveRegistration (){
@@ -58,10 +58,10 @@ public class LoginTests extends TestData {
             mainPage.clickLogin();
         });
         step("Вводим почту", () -> {
-            authorizationPage.setEmail(credentials.login());
+            authorizationPage.setEmail(credentials.userLogin());
         });
         step("Вводим пароль", () -> {
-            authorizationPage.setPassword(credentials.password());
+            authorizationPage.setPassword(credentials.userPassword());
         });
         step("Подтверждаем вход", () -> {
             authorizationPage.submit();
