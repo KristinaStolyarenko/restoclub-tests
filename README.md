@@ -1,6 +1,6 @@
 # :plate_with_cutlery: Автотесты для сайта restoclub.ru
 
-<img src="images/01.png" width="600" height="400"> 
+<img src="images/01.png"> 
 
 ## :stethoscope: Стек:
 | GitHub | IDEA | Java | Junit5 | Gradle | Selenide | Selenoid | Allure Report | Allure TO | Jenkins | Jira |
