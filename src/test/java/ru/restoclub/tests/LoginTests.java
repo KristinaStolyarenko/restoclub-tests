@@ -1,6 +1,6 @@
 package ru.restoclub.tests;
 
-import config.AppConfig;
+import ru.restoclub.config.AppConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
 import ru.restoclub.tests.pages.AuthorizationPage;

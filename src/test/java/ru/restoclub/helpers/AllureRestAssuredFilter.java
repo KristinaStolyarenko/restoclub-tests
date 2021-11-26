@@ -1,4 +1,4 @@
-package helpers;
+package ru.restoclub.helpers;
 
 import io.qameta.allure.restassured.AllureRestAssured;
 

@@ -1,8 +1,8 @@
-package helpers;
+package ru.restoclub.helpers;
 
 import com.codeborne.selenide.Configuration;
-import config.App;
-import config.Project;
+import ru.restoclub.config.App;
+import ru.restoclub.config.Project;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -15,7 +15,7 @@ public class DriverSettings {
         Configuration.browser = Project.config.browser();
         Configuration.browserVersion = Project.config.browserVersion();
         Configuration.browserSize = Project.config.browserSize();
-        //Configuration.baseUrl = App.config.webUrl();
+        Configuration.baseUrl = App.config.webUrl();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions chromeOptions = new ChromeOptions();

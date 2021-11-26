@@ -2,10 +2,10 @@ package ru.restoclub.tests;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import config.Project;
-import helpers.AllureAttachments;
-import helpers.DriverSettings;
-import helpers.DriverUtils;
+import ru.restoclub.config.Project;
+import ru.restoclub.helpers.AllureAttachments;
+import ru.restoclub.helpers.DriverSettings;
+import ru.restoclub.helpers.DriverUtils;
 import io.qameta.allure.junit5.AllureJunit5;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -28,11 +28,11 @@ public class TestBase {
         AllureAttachments.addPageSource();
         AllureAttachments.addBrowserConsoleLogs();
 
+        //Selenide.clearBrowserCookies();
+        Selenide.closeWebDriver();
+
         if (Project.isVideoOn()) {
             AllureAttachments.addVideo(sessionId);
         }
-
-        Selenide.clearBrowserCookies();
-        Selenide.closeWebDriver();
     }
 }

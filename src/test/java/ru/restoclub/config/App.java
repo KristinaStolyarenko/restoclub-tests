@@ -1,4 +1,4 @@
-package config;
+package ru.restoclub.config;
 
 import org.aeonbits.owner.ConfigFactory;
 

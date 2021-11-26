@@ -1,7 +1,7 @@
-package helpers;
+package ru.restoclub.helpers;
 
 import com.codeborne.selenide.Selenide;
-import config.Project;
+import ru.restoclub.config.Project;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
