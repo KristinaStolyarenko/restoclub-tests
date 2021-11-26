@@ -1,4 +1,4 @@
-package ru.restoclub;
+package ru.restoclub.tests;
 
 import com.github.javafaker.Faker;
 

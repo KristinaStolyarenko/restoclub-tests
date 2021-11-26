@@ -1,4 +1,4 @@
-package ru.restoclub;
+package ru.restoclub.tests;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -16,6 +16,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 public class TestBase {
     @BeforeAll
     static void setUp() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         DriverSettings.configure();
     }
 

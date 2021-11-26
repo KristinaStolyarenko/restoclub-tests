@@ -1,11 +1,11 @@
-package ru.restoclub;
+package ru.restoclub.tests;
 
 import config.AppConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
-import ru.restoclub.pages.AuthorizationPage;
-import ru.restoclub.pages.MainPage;
-import ru.restoclub.pages.RegistrationPage;
+import ru.restoclub.tests.pages.AuthorizationPage;
+import ru.restoclub.tests.pages.MainPage;
+import ru.restoclub.tests.pages.RegistrationPage;
 import static io.qameta.allure.Allure.step;
 
 public class LoginTests extends TestData {

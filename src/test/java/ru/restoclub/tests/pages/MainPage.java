@@ -1,4 +1,4 @@
-package ru.restoclub.pages;
+package ru.restoclub.tests.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
