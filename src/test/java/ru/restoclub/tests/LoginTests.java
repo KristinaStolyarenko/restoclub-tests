@@ -50,6 +50,31 @@ public class LoginTests extends TestData {
     }
 
     @Test
+    void  NegativeRegistration (){
+        step("Открываем главную страницу", () -> {
+            mainPage.openPage();
+        });
+        step("Открываем окно авторизации", () -> {
+            mainPage.clickLogin();
+        });
+        step("Открываем окно регистрации", () -> {
+            authorizationPage.openRegistrationForm();
+        });
+        step("Вводим имя пользователя", () -> {
+            registrationPage.setNickname(nickName);
+        });
+        step("Выбераем пол пользователя", () -> {
+            registrationPage.chooseGenderMale();
+        });
+        step("Подтверждаем регистрацию", () -> {
+            registrationPage.сonfirmRegistration();
+        });
+        step("Регистрация не прошла", () -> {
+            registrationPage.checkSubmitRegistrationButton();
+        });
+    }
+
+    @Test
     void PositiveAuthorization (){
         step("Открываем главную страницу", () -> {
             mainPage.openPage();

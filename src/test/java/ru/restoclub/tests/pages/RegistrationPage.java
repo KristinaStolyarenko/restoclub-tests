@@ -39,7 +39,6 @@ public class RegistrationPage {
     public void chooseGenderFemale(){
         genderFemale.click();
     }
-    public void submitRegistration(){
-        submitRegistrationButton.click();
-    }
+    public void submitRegistration(){submitRegistrationButton.click();}
+    public void checkSubmitRegistrationButton(){submitRegistrationButton.shouldBe(Condition.visible);}
 }
