@@ -40,5 +40,5 @@ public class RegistrationPage {
         genderFemale.click();
     }
     public void submitRegistration(){submitRegistrationButton.click();}
-    public void checkSubmitRegistrationButton(){submitRegistrationButton.shouldBe(Condition.visible);}
+    public void checkSubmitRegistrationButton(){registrationConfirmButton.shouldBe(Condition.visible);}
 }
