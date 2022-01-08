@@ -3,12 +3,17 @@ package ru.restoclub.tests;
 import ru.restoclub.config.AppConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
-import ru.restoclub.tests.pages.AuthorizationPage;
-import ru.restoclub.tests.pages.MainPage;
-import ru.restoclub.tests.pages.RegistrationPage;
-import static io.qameta.allure.Allure.step;
+import ru.restoclub.pages.AuthorizationPage;
+import ru.restoclub.pages.MainPage;
+import ru.restoclub.pages.RegistrationPage;
 
-public class LoginTests extends TestData {
+import java.time.Duration;
+
+import static io.qameta.allure.Allure.step;
+import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.WebDriverConditions.*;
+
+public class HighTests extends TestData {
 
     MainPage mainPage = new MainPage();
     AuthorizationPage authorizationPage = new AuthorizationPage();
@@ -137,4 +142,41 @@ public class LoginTests extends TestData {
         });
     }
 
+    @Test
+    void TermsOfUseCheck(){
+        step("Открываем главную страницу", () -> {
+            mainPage.openPage();
+        });
+        step("Нажимаем на кнопку Пользовательское Соглашение", () -> {
+            mainPage.clickTermsOfUseButton();
+        });
+        step("Проверяем открытие Пользовательского Соглашения", () -> {
+            webdriver().shouldHave(url("https://www.restoclub.ru/user-agreement"), Duration.ofSeconds(30));
+        });
+    }
+    @Test
+    void ProjectAboutCheck(){
+        step("Открываем главную страницу", () -> {
+            mainPage.openPage();
+        });
+        step("Нажимаем на кнопку О проекте", () -> {
+            mainPage.clickProjectAboutButton();
+        });
+        step("Проверяем открытие страницы О проекте", () -> {
+            webdriver().shouldHave(url("https://www.restoclub.ru/about"), Duration.ofSeconds(30));
+        });
+    }
+
+    @Test
+    void ContactsCheck(){
+        step("Открываем главную страницу", () -> {
+            mainPage.openPage();
+        });
+        step("Нажимаем на кнопку Контакты Restoclub", () -> {
+            mainPage.clickContactsButton();
+        });
+        step("Проверяем открытие страницы Контакты Restoclub", () -> {
+            webdriver().shouldHave(url("https://www.restoclub.ru/contacts"), Duration.ofSeconds(30));
+        });
+    }
 }

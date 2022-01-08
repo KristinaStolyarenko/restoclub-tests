@@ -1,4 +1,4 @@
-package ru.restoclub.tests.pages;
+package ru.restoclub.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
