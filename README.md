@@ -42,3 +42,7 @@ ___
 ## Видеотчет теста "Успешная авторизация"
 
 <img src="images/videotest.gif" width="1000" height="600"> 
+
+## Интеграция с Jira
+
+<img src="images/jiraresult.png" width="800" height="600"> 
