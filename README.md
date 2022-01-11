@@ -33,11 +33,11 @@ ___
 
 ## Запуск тестов происходит в CI [Jenkins](https://jenkins.autotests.cloud/job/restoclub-tests/)
 
-<img src="images/jenkinsreport.png" width="800" height="600"> 
+<img src="images/jenkinsreport.png" width="1000" height="600"> 
 
 ## Уведомления о прохождение тестов отправляются в Telegram
 
-<img src="images/telegramreport.png" width="800" height="600"> 
+<img src="images/telegramreport.png" width="1000" height="600"> 
 
 ## Видеотчет теста "Успешная авторизация"
 
@@ -45,4 +45,4 @@ ___
 
 ## Интеграция с Jira
 
-<img src="images/jiraresult.png" width="800" height="600"> 
+<img src="images/jiraresult.png" width="1000" height="600"> 
