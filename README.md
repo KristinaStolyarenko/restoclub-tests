@@ -33,7 +33,7 @@ ___
 
 ## Запуск тестов происходит в CI [Jenkins](https://jenkins.autotests.cloud/job/restoclub-tests/)
 
-<img src="images/jenkinsreport.png> 
+<img src="images/jenkinsreport.png"> 
 
 ## Уведомления о прохождение тестов отправляются в Telegram
 
