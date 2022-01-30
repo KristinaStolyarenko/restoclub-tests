@@ -37,7 +37,7 @@ ___
 
 ## Уведомления о прохождение тестов отправляются в Telegram
 
-<img src="images/telegramReport.png"> 
+<img src="images/telegramreport.png"> 
 
 ## Видеотчет теста "Успешная авторизация"
 
